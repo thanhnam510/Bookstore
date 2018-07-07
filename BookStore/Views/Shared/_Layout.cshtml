@@ -23,18 +23,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item"><a>dsadsadsadasdsa</a></li>
-                    <li class="search">
-                        <div id="srch" onmouseover="xpand();" onmouseout="shorten();">
-                            <form action="https://www.google.com/" class="search-form">
-                                <div class="form-group has-feedback">
-                                    <label for="search" class="sr-only">Search</label>
-                                    <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
-
-                                </div>
-                            </form>
-                        </div>
-                    </li>
                     <li class="dropdown dropdown-large">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 
@@ -87,7 +75,6 @@
                                 </ul>
                             </li>
                         </ul>
-
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="1" href="#">Home</a>
@@ -98,18 +85,31 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
                     </li>
-
+                    <li class="search">
+                        <div class="col-lg-6">
+                            <form action="https://www.google.com/">
+                                <label for="search" class="sr-only">Search</label>
+                                <input type="text" placeholder="search" class="search-input" name="search">
+                                <button type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-lg-6 search-select">
+                            <select class="type-of-search header-search-input form-control search-select" name="type">
+                                <option value="name" selected="selected">Theo tên truyện</option>
+                                <option value="author">Theo tác giả</option>
+                            </select>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <input id="myInput" value="Some text..">
-    <button id="myBtn" onclick="javascript:alert('Hello World!')">Button</button>
-    <h1 class="abc">ab</h1>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer >
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
@@ -120,16 +120,40 @@
         function xpand() {
             $('#srch').css({ "width": "300px" });
         };
+        function shorten() {
+            $('#srch').css({ "width": "100%" });
+        }
     </script>
-    <script>
-        var input = document.getElementById("myInput");
-        input.addEventListener("keyup", function (event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                $('.abc').text('abc');
-            }
-        });
+    <style>
+        .search form {
+            display: flex;
+            flex-direction: row;
+        }
+        button {
+            border: 0px solid white;
+            background: white;
+            color: blue;
+        }
+        .search div {
+            padding-top: 7px;
+        }
+        .search-input {
+            height: 30px;
+            width:100%;
+            flex-grow: 2;
+            border: none;
+        }
+        div.search-select {
+            display: flex;
+            padding-left: 1px;
+        }
+        select.search-select{
+            height:30px;
+        }
+        textarea:focus, input:focus {
+            outline:none;
+        }
 
-    </script>
+    </style>
 </body>
 </html>
