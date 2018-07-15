@@ -2,138 +2,160 @@
 @{
     ViewBag.Title = "Index";
 }
-<link href="~/Content/Home.css" rel="stylesheet" />
-<img src="~/img/9159a7ba710db49.jpg " alt="sách" style="width:100%;height:333px" />
-<div class="container col-md-9" style="padding-left :0">
-    <div class="well well-sm">
-        <strong>Category Title</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-th-list">
-                </span>List
-            </a>
-            <a href="#" id="grid" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-th"></span>Grid
-            </a>
-        </div>
-    </div>
+<script>
+    $(#myCarousel).carousel(0).addClass('active');
+</script>
+<img src="~/img/9159a7ba710db49.jpg " alt="sách" style="width:100%;height:333px;margin-bottom: 30px;" />
+<div class="container col-md-12">
+    
     <div id="products" class="row list-group">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row-fluid">
-                        @{
-                            var b = 0;
-                            while (b < 4)
-                            {
-                                b++;
-                                <div class="itm col-xs-3 col-lg-3">
-                                    <div class="thumbnail">
-                                        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                                        <div class="caption">
-                                            <h4 class="group inner list-group-item-heading">
-                                                Product title
-                                            </h4>
-                                            <p class="group inner list-group-item-text">
-                                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                            </p>
-                                            <div class="row">
-                                                <div class="col-xs-12 col-md-6">
-                                                    <p class="lead">
-                                                        $21.000
-                                                    </p>
-                                                </div>
-                                                <div class="col-xs-12 col-md-6">
-                                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Chi tiết</a>
-                                                </div>
-                                            </div> <!--end row-->
-                                        </div> <!--end caption-->
-                                    </div> <!--thumbnail-->
-                                </div> <!--end itm-->
-
-                            }
-                        }
-                    </div>
-                </div>
-                @{
-                    for (int i = 0; i < 2; i++)
-                    {
-                        b = 0;
-                        <div class="item">
-                            <div class="row-fluid">
-                                @while (b < 4)
+        <fieldset>
+            <legend><a a href="#">New products </a></legend>
+            <div id="myCarousel" class="carousel slide" data-interval="false">
+                <div class="carousel-inner">
+                            @{
+                                for (int i = 0; i < 3; i++)
                                 {
-                                    b++;
-                                    <div class="itm  col-xs-3 col-lg-3">
-                                        <div class="thumbnail">
-                                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                                            <div class="caption">
-                                                <h4 class="group inner list-group-item-heading">
-                                                    Product title
-                                                </h4>
-                                                <p class="group inner list-group-item-text">
-                                                    Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                </p>
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-md-6">
-                                                        <p class="lead">
-                                                            $21.000
-                                                        </p>
+                                    var b = 0;
+                                    string a="";
+                                    if (i == 0)
+                                    {
+                                        a = "active";
+                                    }
+                                    <div class="item @a">
+                                        <div class="row-fluid">
+                                            @while (b < 4)
+                                            {
+                                                b++;
+                                                <div class="itm col-xs-2 col-md-2">
+                                                    <div class="product-box-list">
+                                                        <div class="product-box-list">
+                                                            <div tpl="" rel="" class="product-item ">
+                                                                <a data-id="1621207" data-score="" href="https://tiki.vn/bon-chang-trai-cung-nhau-di-du-lich-p1621207.html?src=category-page" title="Bốn Chàng Trai Cùng Nhau Đi Du Lịch" class="">
+                                                                    <span class="image">
+                                                                        <img class="product-image img-responsive center" src="https://vcdn.tikicdn.com/cache/200x200/ts/product/cf/f9/5e/31faa41dfe6feae3b7303bbb1e36db27.jpg" alt="">
+                                                                    </span>
+                                                                    <div class="info">
+                                                                        <span class="title">
+                                                                            Bốn Chàng Trai Cùng Nhau Đi Du Lịch
+                                                                        </span>
+                                                                        <p class="author">Yuriko Mamiya</p>
+                                                                        <p>
+                                                                            <h4 class="price-sale">71.400 ₫</h4>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-xs-12 col-md-6">
-                                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Chi tiết</a>
-                                                    </div>
+                                            </div>
+
+                                                    } <!--end while-->
+                                                </div><!--end row-fluid-->
+                                            </div>
+                                }
+                            }
+                            
+                        </div> <!--end inner-carousel-->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                    </div> <!--end carousel-->
+        </fieldset>
+    </div>
+    <div id="top-products" class="row list-group">
+        <fieldset>
+            <legend><a href="#">Top products</a></legend>
+            <div id="myCarousel2" class="carousel slide" data-interval="false">
+                <div class="carousel-inner">
+                    @{
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string a = "";
+                            if (i == 0)
+                            {
+                                a = "active";
+                            }
+                            var b = 0;
+                            <div class="item @a">
+                                <div class="row-fluid">
+                                    @while (b < 4)
+                                    {
+                                        b++;
+                                    <div class="itm col-xs-2 col-md-2">
+                                        <div class="product-box-list">
+                                            <div class="product-box-list">
+                                                <div tpl="" rel="" class="product-item ">
+                                                    <a data-id="1621207" data-score="" href="https://tiki.vn/bon-chang-trai-cung-nhau-di-du-lich-p1621207.html?src=category-page" title="Bốn Chàng Trai Cùng Nhau Đi Du Lịch" class="">
+                                                        <span class="image">
+                                                            <img class="product-image img-responsive center" src="https://vcdn.tikicdn.com/cache/200x200/ts/product/cf/f9/5e/31faa41dfe6feae3b7303bbb1e36db27.jpg" alt="">
+                                                        </span>
+                                                        <div class="info">
+                                                            <span class="title">
+                                                                Bốn Chàng Trai Cùng Nhau Đi Du Lịch
+                                                            </span>
+                                                            <p class="author">Yuriko Mamiya</p>
+                                                            <p>
+                                                                <h4 class="price-sale">71.400 ₫</h4>
+                                                            </p>
+                                                        </div>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                } <!--end while-->
-
-                            </div><!--end row-fluid-->
-                        </div><!--end item-->
+                                    } <!--end while-->
+                                </div><!--end row-fluid-->
+                            </div><!--end item-->
+                        }
                     }
-                }
-            </div> <!--end inner-carousel-->
-        </div> <!--end carousel-->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                </div> <!--end inner-carousel-->
+                <a class="left carousel-control" href="#myCarousel2" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel2" data-slide="next">›</a>
+            </div> <!--end carousel-->
+        </fieldset>
     </div> <!--end row-list-group-->
 </div> <!--end container 9 left-->
-<div class=" col-md-3 " id="top-products" style="padding-right :0;padding-left:20px">
-    <div class="row">
-        <h3>Top</h3>
-    </div>
-    <div class="row">
-        <form style="padding-left:30px;">
-            <div class="row list-group">
-                @{
-                    var c = 0;
-                    while (c < 5)
-                    {
-                        c++;
-                        <div class="row">
-                            <div class="item">
-                                <div class="col-lg-4 thumbnail">
-                                    <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="row caption">
-                                        <h2 class="group inner list-group-item-heading">Title</h2>
-                                    </div>
-                                    <div class=" row">
-                                        Thông số
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
-        </form>
-    </div>
-</div> <!--end container 3 right-->
+<style>
+   h4.price-sale {
+        text-align: center;
+        color: black;
+    }
 
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
+    .itm {
+        border: 1px solid lightgray;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        box-shadow:none;
+    }
+        .itm:hover {
+            box-shadow:   5px 5px 5px darkgray;
+            border: 1px solid black;
+        }
+
+    .col-md-2 {
+        width: 23%;
+    }
+
+    a {
+        outline: none;
+        color: #2e2d2d;
+    }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+    .info {
+        border-top: 1px solid lightgray;
+    }
+
+</style>

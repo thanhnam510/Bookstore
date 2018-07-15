@@ -6,7 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Menu.css" rel="stylesheet" />
+    <link href="~/Content/Home.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -22,10 +23,14 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a>dsadsadsadasdsa</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="1" href="#">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
                     <li class="dropdown dropdown-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu dropdown-menu-large row">
                             <li class="col-sm-3">
                                 <ul>
@@ -76,15 +81,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="1" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
                     <li class="search">
                         <div class="col-lg-6">
                             <form action="https://www.google.com/">
@@ -110,50 +106,12 @@
         @RenderBody()
         <hr />
         <footer >
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p class="bottom">&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script>
-        function xpand() {
-            $('#srch').css({ "width": "300px" });
-        };
-        function shorten() {
-            $('#srch').css({ "width": "100%" });
-        }
-    </script>
-    <style>
-        .search form {
-            display: flex;
-            flex-direction: row;
-        }
-        button {
-            border: 0px solid white;
-            background: white;
-            color: blue;
-        }
-        .search div {
-            padding-top: 7px;
-        }
-        .search-input {
-            height: 30px;
-            width:100%;
-            flex-grow: 2;
-            border: none;
-        }
-        div.search-select {
-            display: flex;
-            padding-left: 1px;
-        }
-        select.search-select{
-            height:30px;
-        }
-        textarea:focus, input:focus {
-            outline:none;
-        }
 
-    </style>
 </body>
 </html>
